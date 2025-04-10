@@ -1,3 +1,17 @@
+.video-preview {
+  padding-bottom: 10px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+}
+
+.video-preview:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  background-color: rgb(225, 225, 225);
+  transition: all 0.2s ease-in-out;
+}
+
 .thumbnail {
   width: 100%;
 }
@@ -7,6 +21,13 @@
   font-weight: 500;
   line-height: 20px;
   margin-bottom: 10px;
+/* limits title to 2 lines and then does ... */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; /* Use flexbox-like behavior for multi-line ellipsis */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  line-clamp: 2; /* Standard property for compatibility, only uses if has to be*/
+  -webkit-box-orient: vertical; /* Required for -webkit-line-clamp to work */
 }
 
 .video-author {
@@ -39,7 +60,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-
 
 .video-stats {
   font-size: 12px;
